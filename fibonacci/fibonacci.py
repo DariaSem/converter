@@ -18,4 +18,3 @@ def fibonacci_sequence(to_step):
             sequence.append(sequence[i] + sequence[i + 1])
     return sequence
 
-print(fibonacci_sequence(7))
