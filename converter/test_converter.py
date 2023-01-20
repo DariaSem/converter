@@ -3,7 +3,7 @@ import unittest
 
 
 def start_converter(string):
-    return BinaryConverter(string).convert_to_bin()
+    return BinaryConverter(string).convert()
 
 
 class TestConverter(unittest.TestCase):
