@@ -58,4 +58,3 @@ def converter(string, notation):
     return Notation(string, notation).choose_converter()
 
 
-print(converter('aaaajmjhj', 8))
