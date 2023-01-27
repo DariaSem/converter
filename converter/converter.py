@@ -38,14 +38,19 @@ class HexadecimalConverter(Converter):
 
 
 class ConverterFactory:
+    def __init__(self):
+        self.__converters = {
+            2: BinaryConverter(),
+            8: OctalConverter(),
+            16: HexadecimalConverter(),
+        }
+
     def get_converter(self, notation):
-        if notation == 2:
-            return BinaryConverter()
-        elif notation == 8:
-            return OctalConverter()
-        elif notation == 16:
-            return HexadecimalConverter()
+        if notation in self.__converters.keys():
+            return self.__converters[notation]
+        else:
+            raise KeyError(f'incorrect notation {notation}')
 
 
 converterFactory = ConverterFactory()
-print(converterFactory.get_converter(2).convert('hgjgj'))
+print(converterFactory.get_converter(3).convert('jhg'))
